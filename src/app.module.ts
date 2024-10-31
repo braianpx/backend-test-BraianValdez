@@ -1,11 +1,17 @@
 import { Module } from '@nestjs/common';
-import { TaskController } from './task/task.controller';
-import { TaskService } from './task/task.service';
+import { connectDB } from './config/database.config';
 import { TaskModule } from './task/task.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [TaskModule],
-  controllers: [TaskController],
-  providers: [TaskService],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true, // Hace que las variables de entorno sean accesibles en toda la aplicación
+      }),
+    connectDB(),
+    TaskModule,
+  ],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
