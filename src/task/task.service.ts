@@ -7,16 +7,33 @@ import { TaskInterface } from './task.interface';
 export class TaskService {
   constructor(
     @InjectRepository(Task)
-    private TaskRepository: Repository<Task>,
+    private taskRepository: Repository<Task>,
     ){} 
 
-    async createTask(task: TaskInterface){
-      const newTask = this.TaskRepository.create(task);
-      await this.TaskRepository.save(newTask)
-      return task;
-    }
-    async getAllTask(){
-      return await this.TaskRepository.find();
-    }
-
+  async createTask(createTaskDto: TaskInterface): Promise<Task> {
+    const newTask = this.taskRepository.create(createTaskDto);
+    return await this.taskRepository.save(newTask);
   }
+
+  async getAllTasks(): Promise<Task[]> {
+    return await this.taskRepository.find();
+  }
+
+  async updateTask(id: string, updateTaskDto: TaskInterface): Promise<Task> {
+    await this.taskRepository.update(id, updateTaskDto);
+    return await this.taskRepository.findOneBy({ id });
+  }
+
+  async updateTaskComplete(id: string): Promise<Task> {
+    const task = await this.taskRepository.findOneBy({ id });
+    const newStatusComplete = !task.complete;
+    task.complete = newStatusComplete;
+    await this.taskRepository.save(task);
+    return task;
+  }
+
+  async deleteTask(id: string): Promise<void> {
+    await this.taskRepository.delete(id);
+  }
+}
+
