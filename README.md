@@ -13,13 +13,13 @@
 2. **Instala las dependencias**
 Ejecuta el siguiente comando para instalar las dependencias necesarias:
    ```plaintext
-npm install
+  npm install
 
 3. **Inicia el servidor**
 Finalmente, utiliza el siguiente comando para arrancar el backend:
    ```plaintext
-npm start
+  npm start
 
 *Si deseas iniciar el servidor en modo de desarrollo, usa:*
    ```plaintext
-npm run start:dev
+  npm run start:dev
