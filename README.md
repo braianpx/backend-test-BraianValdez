@@ -1,25 +1,57 @@
-## Cómo arrancar el Backend
+# TechTest
 
-1. **Configura la conexión a la base de datos**  
-   En la raíz de tu proyecto, crea un archivo llamado `.env` y agrega las siguientes líneas:
+Este proyecto es un backend diseñado con NestJS para gestionar tareas de manera eficiente. Utiliza TypeORM para la interacción con la base de datos y proporciona una API RESTful para crear, leer, actualizar y eliminar tareas.
 
-   ```plaintext
-   HOST=localhost           # Host del servidor
-   PORT=5432                # Puerto de PostgreSQL
-   USER=postgres            # Usuario de PostgreSQL
-   PASSWORD=postgres              # Contraseña de PostgreSQL (asegúrate de establecer una contraseña)
-   DB=TechTestDB            # Nombre de la base de datos a utilizar
+## Pre-requisitos
 
-2. **Instala las dependencias**
-Ejecuta el siguiente comando para instalar las dependencias necesarias:
-   ```plaintext
-   npm install
+Antes de comenzar, asegúrate de tener instalado Node.js, npm y postgres en tu máquina. Este proyecto también requiere Visual Studio Code (o cualquier editor de código de tu preferencia) para una gestión más cómoda del código.
 
-3. **Inicia el servidor**
-Finalmente, utiliza el siguiente comando para arrancar el backend:
-   ```plaintext
-   npm start
+## Configuración inicial
 
-~ *Si deseas iniciar el servidor en modo de desarrollo, usa:*
-   ```plaintext
+1. **Clonar el repositorio**
+2. Para obtener el proyecto, clona el repositorio usando Git:
+
+   ```bash
+   git clone https://github.com/braianpx/backend-test-BraianValdez.git
+   ```
+3. **Abrir el proyecto**
+Abre la carpeta 'backend-test-BraianValdez' con Visual Studio Code o tu editor de código preferido.
+
+  ```bash
+  cd backend-test-BraianValdez
+  ```
+3. **Instalar dependencias**
+Dentro de la terminal del editor, ejecuta el siguiente comando para instalar las dependencias del proyecto:
+
+    ```bash
+     npm install
+     ```
+4. **Configuración de variables de entorno**
+Crea un archivo .env en la raíz del proyecto con las siguientes variables:
+
+```plaintext
+HOST=localhost            # Host del servidor
+PORTDB=5432               # Puerto de PostgreSQL
+USER=postgres             # Usuario de PostgreSQL
+PASSWORD=                 # Contraseña de PostgreSQL (asegúrate de establecer una contraseña)
+DB=TechTestDB             # Nombre de la base de datos a utilizar
+```
+5. **Construir el proyecto**
+Compila el proyecto para producción con el siguiente comando:
+
+   ```bash
+   npm run build
+   ```
+6. **Iniciar el servidor**
+Una vez construido el proyecto, inicia el servidor con:
+
+   ```bash
+   npm run start
+   ```
+##### Nota: Si deseas iniciar el servidor en modo de desarrollo, utiliza:
+   ```bash
    npm run start:dev
+   ```
+7. **Acceso a Swagger UI**
+Para ver la documentación de la API y probar los endpoints directamente, navega a http://localhost:3000/api en tu navegador. Esto abrirá Swagger UI, donde podrás interactuar con la API.
+##### Nota: Es necesario tener el proyecto ya iniciado para poder ver la documentación.
