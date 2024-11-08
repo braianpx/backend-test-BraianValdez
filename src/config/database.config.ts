@@ -9,17 +9,6 @@ export const connectDB = () => {
   inject: [ConfigService],    //
   useFactory: async (configService: ConfigService) => {  //conexion DB con variables de entorno
     try{
-      await createDatabase({ //crea la DB si no existe
-        ifNotExist: true,
-        options: {
-          type: 'postgres',
-          host: configService.get<string>('HOST') || 'localhost',
-          port: configService.get<number>('PORTDB') || 5432,
-          username: 'postgres',
-          password: configService.get<string>('PASSWORD') || 'postgres',
-          database: configService.get<string>('DB') || 'TechTestDB',
-        },
-      });
       return {  //retorna la conexion para la DB anteriormente creada
         type:'postgres',
         host: configService.get<string>('HOST') || 'localhost',
