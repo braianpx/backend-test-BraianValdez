@@ -4,7 +4,7 @@ Este proyecto es un backend diseñado con NestJS para gestionar tareas de manera
 
 ## Pre-requisitos
 
-Antes de comenzar, asegúrate de tener instalado Node.js, npm y postgres en tu máquina. Este proyecto también requiere Visual Studio Code (o cualquier editor de código de tu preferencia) para una gestión más cómoda del código.
+Antes de comenzar, asegúrate de tener instalados Node.js, npm y PostgreSQL en tu máquina. También necesitarás Visual Studio Code (o cualquier editor de código de tu preferencia) para gestionar el código de manera más cómoda. Además, deberás crear la base de datos en PostgreSQL.
 
 ## Configuración inicial
 
